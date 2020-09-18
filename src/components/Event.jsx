@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {DELETE_EVENT} from "../actions/index"
-function Event({event, dispatch}){
+import AppContext from './../contexts/AppContext';
+
+function Event({event}){
+  const {dispatch} = useContext(AppContext)
     const id = event.id
     const handleClick = (event)=>{
       event.preventDefault();
