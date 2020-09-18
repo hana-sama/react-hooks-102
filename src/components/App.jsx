@@ -1,6 +1,8 @@
 import React, {useState, useReducer} from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import reducer from "./reducers/index.js"
+import Event from './Event'
+
 function App() {
   const [state, dispatch] = useReducer(reducer,[])
   const [title, setTitle] = useState("")
@@ -18,6 +20,7 @@ function App() {
 
     event.preventDefault();
   }
+
    return (
     <div className="container-fluid">
       <h4>イベント作成フォーム</h4>
@@ -45,6 +48,7 @@ function App() {
         </tr>
         </thead>
         <tbody>
+        {state.map((event, index)=>(<Event key={index} event={event}dispatch={dispatch}/>))}
         </tbody>
       </table>
     </div>
