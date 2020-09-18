@@ -1,11 +1,11 @@
 import React from 'react'
-
+import {DELETE_EVENT} from "../actions/index"
 function Event({event, dispatch}){
     const id = event.id
     const handleClick = (event)=>{
       event.preventDefault();
-      const result = window.confirm(`Are You Really Want to Delete This Post(ID=${id})?`)
-      if(result)dispatch({type: "DELETE_EVENT", id})
+      const result = window.confirm(`イベント(ID=${id})を本当に削除しても良いですか?`)
+      if(result)dispatch({type: DELETE_EVENT, id})
     }
     return (<tr>
       <td>{id}</td>
