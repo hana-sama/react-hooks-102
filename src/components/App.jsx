@@ -5,7 +5,7 @@ import Events from './Events';
 import AppContext from './../contexts/AppContext';
 import reducer from "./reducers"
 import operationLogs from './reducers/operationLogs';
-
+import OperationLogs from "./OperationLogs"
 function App() {
   const initialState = {
     events:[],
@@ -17,6 +17,7 @@ function App() {
       <div className="container-fluid">
         <EventForm />
         <Events />
+        <OperationLogs />
       </div>
     </AppContext.Provider>
   )

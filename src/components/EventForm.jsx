@@ -22,7 +22,7 @@ function EventForm() {
     dispatch({
       type: ADD_OPERATION_LOG,
       description: "イベントを作成しました。",
-      operatedAt: timeCurrentIso8601
+      operatedAt: timeCurrentIso8601()
     })
     setTitle("")
     setBody("")
@@ -38,7 +38,7 @@ function EventForm() {
         dispatch({
           type: ADD_OPERATION_LOG,
           description: "全てのイベントを削除しました。",
-          operatedAt: timeCurrentIso8601
+          operatedAt: timeCurrentIso8601()
         })
       }
   }
@@ -50,7 +50,7 @@ function EventForm() {
       dispatch({
         type: DELETE_ALL_OPERATION_LOGS,
         description: "全ての操作ログを削除しました。",
-        operatedAt: timeCurrentIso8601
+        operatedAt: timeCurrentIso8601()
       })
     }
   }
