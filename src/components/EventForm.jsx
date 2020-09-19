@@ -30,15 +30,41 @@ function EventForm() {
       <form>
         <div className="form-group">
           <label htmlFor="formEventTitle">タイトル</label>
-          <input className="form-control" id="formEventTitle" value={title} onChange={e=> setTitle(e.target.value)}/>
+          <input 
+          className="form-control" 
+          id="formEventTitle" 
+          value={title} 
+          onChange={e=> setTitle(e.target.value)}
+          />
         </div>
         <div className="form-group">
           <label htmlFor="formEventBody">ボディー</label>
-          <textarea className="form-control" id="formEventBody" value={body} onChange={e=> setBody(e.target.value)}/>
+          <textarea 
+          className="form-control" 
+          id="formEventBody" 
+          value={body} 
+          onChange={e=> setBody(e.target.value)}
+          />
         </div>
-        <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>イベントを作成する</button>
-        <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.events.length === 0 ? true : false}>全てのイベントを削除する</button>
-        <button className="btn btn-danger">全ての操作ログを削除する</button>
+        <button 
+        className="btn btn-primary" 
+        onClick={addEvent} 
+        disabled={unCreatable}
+        >
+        イベントを作成する
+        </button>
+        <button 
+        className="btn btn-danger" 
+        onClick={deleteAllEvents} 
+        disabled={state.events.length === 0 ? true : false}
+        >
+        全てのイベントを削除する
+        </button>
+        <button 
+        className="btn btn-danger"
+        >
+        全ての操作ログを削除する
+        </button>
       </form>
     </React.Fragment>
   )
