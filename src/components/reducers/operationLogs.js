@@ -1,5 +1,3 @@
-const { ADD_OPERATION_LOG } = require("../../actions");
-import { DELETE_ALL_OPERATION_LOGS } from './../../actions/index';
 import {
 ADD_OPERATION_LOG,
 DELETE_ALL_OPERATION_LOGS
