@@ -43,6 +43,17 @@ function EventForm() {
       }
   }
   const unCreatable = title === "" || body === ""
+  function deleteAllOperationLogs(event){
+    event.preventDefault()
+    const result = window.confirm("全ての操作ログを本当に削除しても良いですか？")
+    if(result){
+      dispatch({
+        type: DELETE_ALL_OPERATION_LOGS,
+        description: "全ての操作ログを削除しました。",
+        operatedAt: timeCurrentIso8601
+      })
+    }
+  }
   return (
     <React.Fragment>
     <h4>イベント作成フォーム</h4>
@@ -80,7 +91,9 @@ function EventForm() {
         全てのイベントを削除する
         </button>
         <button 
-        className="btn btn-danger"
+        className="btn btn-danger" 
+        onClick={deleteAllOperationLogs}
+        disabled={state.operationLogs.length=== 0 ? true : false}
         >
         全ての操作ログを削除する
         </button>
